@@ -1,0 +1,209 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/video_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/mainView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:background="@drawable/bg">
+
+        <ImageButton
+            android:id="@+id/startMusic"
+            android:background="@drawable/ic_play"
+            android:layout_width="230dip"
+            android:layout_height="230dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+        <ImageButton
+            android:id="@+id/stopMusic"
+            android:background="@drawable/ic_pause"
+            android:layout_width="230dip"
+            android:layout_height="230dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible" />
+        <SurfaceView
+            android:id="@+id/video"
+            android:layout_width="2dip"
+            android:layout_height="2dip"
+            android:fitsSystemWindows="true"
+            android:layout_alignBottom="@+id/startMusic"
+            android:layout_centerHorizontal="true" />
+
+        <!--<LinearLayout
+            android:id="@+id/rl_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_buffer"
+                android:layout_marginTop="2dp"
+                android:background="#000000"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>-->
+        <RelativeLayout
+            android:id="@+id/radioLinkView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="39dp">
+            <ImageView
+                android:id="@+id/radioLinkLogo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/streaming_logo"
+
+                />
+            <TextView
+                android:id="@+id/android_website"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AM WGBB1240.com"
+                android:fontFamily="@string/video_layout_loading"
+                android:textColor="#FFFFFFFF"
+                android:autoText="false"
+                android:textSize= "23dp"
+                android:layout_toRightOf="@id/radioLinkLogo"
+                android:paddingLeft="20dp"
+                 />
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/listMenu"
+            android:background="@drawable/ic_menu_preferences"
+            android:layout_alignRight="@+id/radioLinkView"
+            android:layout_alignEnd="@+id/radioLinkView" />
+
+        <!--<ImageButton
+            android:id="@+id/bindMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_locked"
+            android:layout_above="@+id/android_website"
+            android:layout_centerHorizontal="true" />-->
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/lstMenu"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:background="@drawable/bg">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButtonOk"
+            android:background="@drawable/ap_ok"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButtonBack"
+            android:background="@drawable/ap_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:layout_below="@+id/imageButtonBack"
+            android:id="@+id/relativeLayout">
+
+
+            <ExpandableListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listView"
+                android:paddingTop="70dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_below="@+id/radioButton" />
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButtonAdd"
+                android:background="@drawable/ap_add"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:text="Play Stream"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:id="@+id/radioButton"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/imageButtonAdd"
+                android:layout_toLeftOf="@+id/imageButtonAdd"
+                android:checked="true"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:layout_width="150dip"
+                android:layout_height="60dip"
+                android:id="@+id/playStreamButton"
+                android:text="Play Stream"
+
+                />
+
+            <EditText
+                android:id="@+id/eTb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+                <requestFocus />
+            </EditText>
+            <!--<Button
+                android:id="@+id/showButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:visibility="gone"/>-->
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
